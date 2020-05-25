@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <!-- This is rendered using string interpolation ngStyle and ngClass -->
+                <p [ngStyle]= "{backgroundColor: getColor()}" [ngClass]= "{online: serverValue.code === 'online'}">server component is on the server port <b>{{serverId}} </b>
+                    with the status code <i>{{serverValue.code}} </i> which means everything is <strong>{{serverValue.status}}</strong></p>
+                <!-- Using event object for binding or updating values -->
+                    <label>Enter Server Name To Use Events: </label>
+                <input type="number" class="form-control" (input)= onUpdateServerName($event)>
+                    <!-- This is rendered using property binding -->    
+                <p> This button would be enabled dynamically after {{this.timeOutValue}} milliseconds
+                <button class="btn btn-primary" [disabled]= "allowNewServer" [class]= "newClass" (click)= "addServer()">Host Server</button></p>
+                <p *ngIf= "serverStatus" class="info">{{serverCreationStatus}}</p>
+                <ul>
+                    <li *ngFor= "let server of servers">{{server}}</li>
+                </ul>
+                <!-- Using Two way Data Binding -->
+                <label>Enter server status to use two way data binding: </label>
+                <input [(ngModel)]= "serverValue.status">
+</div>
+</div>
+</div>
+<app-warning-alert></app-warning-alert>

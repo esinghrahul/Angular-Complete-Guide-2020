@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      Game Control Component
+      <app-game-control (intervalFired)= "onIntervalFired($event)"></app-game-control>
+    </div>
+    <div class="col-md-6">
+      Odd Component
+      <div class="row" *ngFor= "let value of counterValueOdd">
+        <app-odd [oddNumber]= "value"></app-odd>
+      </div>
+    </div>
+    <div class="col-md-6">
+      Even Component
+      <div class="row" *ngFor= "let val of counterValueEven">
+        <app-even [evenNumber]= "val"></app-even>
+      </div>
+    </div>
+  </div>
+</div>

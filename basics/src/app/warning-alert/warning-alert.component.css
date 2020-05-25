@@ -1,0 +1,13 @@
+p{
+    color: firebrick;
+    border: solid 1px mistyrose;
+    text-align: center;
+}
+span p{
+    color: orchid;
+    text-align: start;
+}
+
+.tight-white{
+    color: white;
+}

@@ -1,0 +1,17 @@
+<p>---Data Binding Assignment---</p>
+<div class="container">
+<label class="label">Enter Username: </label>
+<input type="text" class="form-control" [(ngModel)]= "userName">
+<span><p>Welcome {{userName}}!</p></span>
+<button class="btn btn-primary" [disabled]="userName === ''" (click)= "onButtonClick()">Clear Value</button>
+</div>
+<p>---Directives Assignment---</p>
+<div class="container">
+    <button class="btn btn-primary" (click)= "onDisplayClick()">Display Details</button>
+    <span *ngIf="spanVisible"><p>Here is the magic keyword: boo!</p></span>
+    <!-- <div *ngFor= "let clickStatus of clickStatusValues">{{clickStatus}}</div> -->
+    <ul *ngFor= "let clickStatus of clickStatusValues; let i= index">
+        <li [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}" 
+            [ngClass]= "{'tight-white': i >= 4}">{{clickStatus}}</li>
+    </ul>
+</div>
